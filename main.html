@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel - Gallery, Rooms, Welcome, Amenities & Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red Hat Display">
+</head>
+<body>
+    <!-- ==================== SECTION 1: FINAL GALLERY ==================== -->
+    <section class="section-gallery" id="gallery">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-inner" id="carouselInner"></div>
+
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-nav-prev" id="prevBtn" aria-label="Previous slide">‹</button>
+                <button class="carousel-nav carousel-nav-next" id="nextBtn" aria-label="Next slide">›</button>
+
+                <!-- Counter -->
+                <div class="carousel-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+                </div>
+
+                <!-- Dot Navigation -->
+                <div class="carousel-dots" id="dotsContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 2: WELCOME ==================== -->
+    <section class="section-welcome" id="welcome">
+        <div class="welcome-card">
+            <header class="welcome-header">
+                <h1>Greetings</h1>
+                <div class="divider"></div>
+            </header>
+
+            <article class="welcome-article">
+                <p id="welcomeContent"></p>
+            </article>
+            <div class="welcome-button-container">
+        <button class="welcome-button">+ Add to Favourites</button>
+      </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 3: AMENITIES & RULES ==================== -->
+    <section class="section-amenities" id="amenities">
+        <div class="amenities-container">
+            <div class="btn-container">
+                <button class="amenities-button" onclick="openPDF(htl_amenities)">View Amenities</button>
+                <button class="amenities-button" onclick="openPDF(htl_rules)">View Rules</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 4: ROOMS ==================== -->
+    <section class="rooms-section">
+        <div class="rooms-wrapper">
+            <!-- Heading with scroll buttons on left and right -->
+            <div class="rooms-header">
+                <button class="rooms-scroll-btn scroll-left" id="scrollLeftBtn" aria-label="Scroll rooms left">‹</button>
+                <h2 class="section-title">Our Rooms</h2>
+                <button class="rooms-scroll-btn scroll-right" id="scrollRightBtn" aria-label="Scroll rooms right">›</button>
+            </div>
+            <div class="rooms-container" id="roomsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <!-- Restructured modal with scrollable form and fixed bottom section -->
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h3 class="modal-title">Reserve Your Room</h3>
+            <p class="selected-room-name" id="selectedRoomName"></p>
+            
+            <!-- Scrollable Form Area -->
+            <div class="form-scroll-area">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkIn">Check-in Date *</label>
+                            <input type="date" id="checkIn" name="checkIn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkOut">Check-out Date *</label>
+                            <input type="date" id="checkOut" name="checkOut" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mealPlan">Meal Plan</label>
+                        <select id="mealPlan" name="mealPlan">
+                            <option value="none">Room Only (No Meals) - ₹0</option>
+                            <option value="breakfast">Breakfast Only - ₹500/person</option>
+                            <option value="halfBoard">Half Board (Breakfast + Dinner) - ₹1,000/person</option>
+                            <option value="fullBoard">Full Board (All Meals) - ₹1,500/person</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Counter inputs in a row with +/- buttons -->
+                    <div class="counter-row">
+                        <div class="counter-group">
+                            <label>Rooms *</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numRooms">−</button>
+                                <input type="number" id="numRooms" name="numRooms" min="1" value="1" required readonly>
+                                <button type="button" class="counter-btn plus" data-target="numRooms">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Adults *</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numAdults">−</button>
+                                <input type="number" id="numAdults" name="numAdults" min="1" value="1" required readonly>
+                                <button type="button" class="counter-btn plus" data-target="numAdults">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Children</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numChildren">−</button>
+                                <input type="number" id="numChildren" name="numChildren" min="0" value="0" readonly>
+                                <button type="button" class="counter-btn plus" data-target="numChildren">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="limit-note" id="limitNote" aria-live="polite">Add more rooms to add more persons (adult or child)</div>
+                    <div class="form-group">
+                        <label for="specialRequest">Special Requests</label>
+                        <textarea id="specialRequest" name="specialRequest" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="businessBooking" name="businessBooking">
+                        <label for="businessBooking">This is a business booking</label>
+                    </div>
+                    
+                    <div class="business-fields" id="businessFields">
+                        <div class="form-group">
+                            <label for="gstin">GSTIN *</label>
+                            <input type="text" id="gstin" name="gstin">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyAddress">Company Address *</label>
+                            <textarea id="companyAddress" name="companyAddress" rows="2"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Fixed bottom section with price breakup and submit button -->
+            <div class="fixed-bottom-section">
+                <!-- Collapsible wrapper: header + all price rows + Amount Payable -->
+                <div class="price-breakup-wrapper">
+                    <!-- Price Breakup header (clickable to toggle entire section) -->
+                    <div class="price-breakup-header" id="priceBreakupHeader" role="button" tabindex="0" aria-expanded="false">
+                        <h4><span id="priceBreakupLabel">Open Price Breakup</span></h4>
+                    </div>
+
+                    <!-- Collapsible section (price rows) -->
+                    <div class="price-breakup" id="priceBreakupCollapsible">
+                        <div class="breakup-row">
+                            <span id="roomLabel"><span id="roomCount">2</span> Room(s)</span>
+                            <span id="roomCostBreakup">+ ₹0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="extraAdultLabel"><span id="extraAdultCount">1</span> Extra Adult(s)</span>
+                            <span id="adultCostBreakup">+ ₹0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="extraChildLabel"><span id="extraChildCount">1</span> Extra Child(s)</span>
+                            <span id="childCostBreakup">+ ₹0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="mealLabel"><span id="mealPlanName">Half Board</span> Meal Plan</span>
+                            <span id="mealCostBreakup">+ ₹0</span>
+                        </div>
+                        <div class="breakup-row total">
+                            <span>Sum Total <span class="per-night-note">(per night)</span></span>
+                            <span class="total-price" id="totalPrice">₹0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="nightLabel"><span id="nightCount">1</span> Night(s)</span>
+                            <span id="nightCost"><span class="multiplier-note">× <span id="nightsValue">1</span></span></span>
+                        </div>
+                    </div>
+
+                    <!-- Amount Payable placed OUTSIDE the collapsible section so it remains visible -->
+                    <div class="breakup-row total grand-outside" id="grandTotalRow">
+                        <span>Amount Payable</span>
+                        <span class="total-price" id="grandTotal">₹0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <button class="fullscreen-close" id="fullscreenClose">&times;</button>
+        <div class="zoom-controls">
+            <button class="zoom-btn" id="zoomIn">+</button>
+            <button class="zoom-btn" id="zoomOut">−</button>
+            <button class="zoom-btn" id="zoomReset">Reset</button>
+        </div>
+        <div class="fullscreen-image-container" id="fullscreenContainer">
+            <img src="/placeholder.svg" alt="Room Image" id="fullscreenImage">
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 5: CONTACT ==================== -->
+    <section class="section-contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-grid">
+                <!-- Left Grid - Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h2>Get in Touch</h2>
+                        <p>We'd love to hear from you. Reach out to us using any of the contact methods below.</p>
+                    </div>
+
+                    <div class="contact-items" id="contactItems">
+                        <!-- Contact items will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Grid - Google Map -->
+                <div class="map-container">
+                    <iframe id="mapIframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
