@@ -1,4 +1,3 @@
-n js
 
 // ==================== IMAGE CAROUSEL (Final Gallery) ====================
 
