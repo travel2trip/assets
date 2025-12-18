@@ -1,0 +1,3038 @@
+<style>
+    /* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Red Hat Display, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* ==================== SECTION: FINAL GALLERY ==================== */
+.section-gallery {
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 970px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 66.67%;
+    background: #f1f5f9;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.carousel-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation Arrows */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    color: #1e293b;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-nav:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-prev {
+    left: 20px;
+}
+
+.carousel-nav-next {
+    right: 20px;
+}
+
+/* Dot Navigation */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.dot.active {
+    background: #ffffff;
+    width: 32px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Counter */
+.carousel-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* ==================== SECTION: WELCOME ==================== */
+.section-welcome {
+    background: white;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 970px;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-header h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.divider {
+    width: 3rem;
+    height: 0.25rem;
+    background-color: #3b82f6;
+    border-radius: 9999px;
+    margin: 0 auto;
+}
+
+.welcome-article {
+    text-align: center;
+}
+
+.welcome-article p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.625;
+}
+
+.welcome-button-container {
+    text-align: center;
+}
+
+.welcome-button {
+    margin-top: 20px;
+    font-family: Red Hat Display, sans-serif;
+    padding: 0.625rem 1.5rem;
+    background-image: linear-gradient(30deg, #C0357E, #EE5840);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.welcome-button:hover {
+    background-color: #2563eb;
+}
+
+.welcome-button:active {
+    transform: scale(0.98);
+}
+
+/* ==================== SECTION: AMENITIES & RULES ==================== */
+
+.amenities-container {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+.btn-container {
+    display: flex;
+    width: 100%;
+    gap: 0;
+}
+
+.amenities-button {
+    font-family: Red Hat Display, sans-serif;
+    width: 50%;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    transition: 0.3s;
+}
+
+.amenities-button:hover {
+    background: #0056b3;
+}
+
+/* ==================== SECTION: ROOMS ==================== */
+
+.rooms-section {
+    padding: 40px 20px;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.rooms-wrapper {
+    width: 100%;
+    max-width: 970px;
+}
+
+.rooms-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 0 20px;
+}
+
+.rooms-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 20px 40px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #2563eb #f1f5f9;
+}
+
+/* Scroll controls beside heading */
+.rooms-scroll-controls {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 12px;
+    gap: 8px;
+}
+
+.rooms-scroll-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.rooms-scroll-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.rooms-scroll-btn:active {
+    transform: scale(0.95);
+}
+
+/* Make sure on small screens buttons stay proportional */
+@media (max-width: 480px) {
+    .rooms-scroll-btn { width: 42px; height: 42px; font-size: 1.2rem; }
+    .rooms-header { gap: 12px; }
+}
+
+.rooms-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.rooms-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.rooms-container::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 4px;
+}
+
+/* Room Card */
+.room-card {
+    /* Force exact card width inside the horizontal flex container */
+    flex: 0 0 254px;
+    width: 254px;
+    max-width: 254px;
+    min-width: 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+.room-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(2,6,23,0.08);
+}
+
+/* Image Carousel */
+.carousel {
+    position: relative;
+}
+
+.main-image-container {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 5px;
+    padding: 8px;
+    background: rgba(241,245,249,0.6);
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 40px!important;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    opacity: 1;
+}
+
+/* Card Content */
+.card-content {
+    padding: 16px;
+}
+
+.room-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.room-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 15px;
+}
+
+.room-price span {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #475569;
+}
+
+.reserve-btn {
+    font-family: Red Hat display, sans-serif;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reserve-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.2);
+}
+
+/* ==================== BOOKING MODAL ==================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2,6,23,0.45);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    position: relative;
+    border: 1px solid rgba(37,99,235,0.08);
+    /* Flex layout for fixed bottom section */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #2563eb;
+    padding: 30px 30px 0 30px;
+}
+
+.selected-room-name {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 10px;
+    padding: 0 30px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #0f172a;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #2563eb;
+}
+
+/* Scrollable form area */
+.form-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 30px;
+    scrollbar-width: thin;
+    scrollbar-color: #2563eb #f1f5f9;
+}
+
+.form-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.form-scroll-area::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.form-scroll-area::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 3px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {  
+    font-family: Red Hat display, sans-serif;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e6eef8;
+    border-radius: 8px;
+    background: #fff;
+    color: #0f172a;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.form-group select option {
+    background: #fff;
+    color: #0f172a;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* Counter inputs row with +/- buttons */
+.counter-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.counter-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.counter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+    color: #475569;
+    font-weight: 600;
+}
+
+.counter-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e6eef8;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.counter-input input {
+    font-family: Red Hat display, sans-serif;
+    width: 42px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    color: #0f172a;
+    font-size: 1rem;
+    padding: 10px 5px;
+    -moz-appearance: textfield;
+}
+
+.counter-input input::-webkit-outer-spin-button,
+.counter-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.counter-btn {
+    width: 36px;
+    height: 40px;
+    border: none;
+    background: rgba(37,99,235,0.1);
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.counter-btn:hover {
+    background: rgba(37,99,235,0.18);
+}
+
+.counter-btn:active {
+    background: rgba(240, 193, 75, 0.6);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #2563eb!important;
+}
+  
+  
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.business-fields {
+    display: none;
+    padding: 15px;
+    background: rgba(37,99,235,0.06);
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.business-fields.active {
+    display: block;
+}
+
+/* Fixed bottom section with price breakup */
+.fixed-bottom-section {
+    padding: 10px 30px 25px;
+    background: rgba(37, 99, 235, 0.04);
+    border-top: 1px solid rgba(37,99,235,0.06);
+}
+
+.price-breakup h4 {
+    color: #2563eb;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.breakup-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    color: #475569;
+    border-bottom: 1px solid rgba(15,23,42,0.03);
+}
+
+.breakup-row:last-child {
+    border-bottom: none;
+}
+
+.breakup-row.total {
+    padding-top: 12px;
+    border-top: 1px solid rgba(37,99,235,0.08);
+    border-bottom: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.breakup-row.total .total-price {
+    color: #2563eb;
+    font-size: 1.25rem;
+}
+
+.submit-btn {
+    font-family: Red Hat display, sans-serif;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(37,99,235,0.16);
+}
+
+/* Fullscreen Modal */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-modal.active {
+    display: flex;
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.3s ease;
+}
+
+.fullscreen-close:hover {
+    color: #2563eb;
+}
+
+.zoom-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2001;
+}
+
+.zoom-btn {
+    font-family: Red Hat display, sans-serif;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-btn:last-child {
+    width: auto;
+    padding: 0 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+}
+
+.zoom-btn:hover {
+    background: #1e40af;
+    transform: scale(1.1);
+}
+
+.zoom-btn:active {
+    transform: scale(0.95);
+}
+
+.fullscreen-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-image-container:active {
+    cursor: grabbing;
+}
+
+#fullscreenImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+/* Limit note for adults counter */
+.limit-note {
+    display: none;
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.limit-note.show {
+    display: block;
+}
+
+/* Small, muted note for per-night annotation */
+.per-night-note {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-left: 6px;
+    font-weight: 500;
+}
+
+/* Multiplier note for nights */
+.multiplier-note {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-left: 0;
+    font-weight: 400;
+}
+
+/* Price Breakup collapse wrapper and styles */
+.price-breakup-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-toggle {
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    color: #2563eb;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.price-breakup {
+    overflow: hidden;
+    transition: max-height 300ms ease, padding 200ms ease;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.price-breakup.expanded {
+    max-height: 1000px;
+}
+
+/* Price Breakup header (clickable) */
+.price-breakup-header {
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    user-select: none;
+    transition: background 200ms ease;
+    border-radius: 6px;
+}
+
+.price-breakup-header:hover {
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.price-breakup-header h4 {
+    color: #2563eb;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.grand-outside {
+    margin-top: 4px;
+    padding-top: 12px;
+}
+
+/* ==================== SECTION: CONTACT ==================== */
+.section-contact {
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+}
+
+.contact-container {
+    max-width: 970px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+/* Contact Information */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-header {
+    margin-bottom: 2rem;
+}
+
+.contact-header h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.contact-header p {
+    font-size: 1.125rem;
+    color: #666666;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon-box {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: #1a1a1a;
+    stroke-width: 2;
+    fill: none;
+}
+
+.contact-item-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+}
+
+.contact-item-content a,
+.contact-item-content p {
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item-content a:hover {
+    color: #1a1a1a;
+}
+
+.contact-item-content .description {
+    font-size: 0.875rem;
+    color: #999999;
+    margin-top: 0.25rem;
+}
+
+/* Map */
+.map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    min-height: 400px;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Carousel - Mobile */
+@media (max-width: 768px) {
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .carousel-nav-prev {
+        left: 12px;
+    }
+
+    .carousel-nav-next {
+        right: 12px;
+    }
+
+    .carousel-dots {
+        bottom: 15px;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        width: 28px;
+    }
+
+    .carousel-counter {
+        top: 15px;
+        right: 15px;
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .rooms-container {
+        padding: 10px 20px;
+    }
+
+    .room-card {
+        max-width: 254px;
+    }
+
+    .modal-content {
+        padding: 0;
+    }
+
+    .modal-title {
+        padding: 20px 20px 0 20px;
+    }
+
+    .selected-room-name {
+        padding: 0 20px;
+    }
+
+    .form-scroll-area {
+        padding: 15px 20px;
+    }
+
+    .fixed-bottom-section {
+        padding: 15px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack counter inputs on mobile */
+    .counter-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .zoom-controls {
+        bottom: 20px;
+    }
+
+    .zoom-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .zoom-btn:last-child {
+        font-size: 0.8rem;
+        padding: 0 15px;
+    }
+}
+
+/* Welcome - Mobile */
+@media (min-width: 640px) {
+    
+    .welcome-card {
+        padding: 2rem;
+    }
+
+    .welcome-header h1 {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .divider {
+        width: 3.5rem;
+    }
+
+    .welcome-article p {
+        font-size: 1.125rem;
+    }
+
+    .welcome-button {
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        width: auto;
+    }
+}
+
+/* Welcome - Tablet */
+@media (min-width: 768px) {
+
+
+    .welcome-card {
+        padding: 2.5rem;
+    }
+
+    .welcome-header h1 {
+        font-size: 3rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .divider {
+        width: 4rem;
+    }
+
+    .welcome-article p {
+        font-size: 1.25rem;
+    }
+
+    .welcome-button {
+        padding: 0.875rem 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    .section-contact {
+        padding: 3rem 1.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: stretch;
+    }
+
+    .contact-header h2 {
+        font-size: 3rem;
+    }
+
+    .map-container {
+        min-height: 100%;
+    }
+}
+
+/* Welcome - Desktop */
+@media (min-width: 1024px) {
+    
+
+    .welcome-header h1 {
+        font-size: 3.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .divider {
+        width: 4rem;
+    }
+
+    .welcome-article p {
+        font-size: 1.25rem;
+    }
+
+    .welcome-button {
+        padding: 0.875rem 2.5rem;
+        font-size: 1.125rem;
+    }
+}
+  
+  /* Restore visible checkbox ticks and set tick color */
+input[type="checkbox"]{
+  -webkit-appearance: auto;
+  appearance: auto;
+  accent-color: #007bff;
+}
+
+</style>
+
+<script>
+ 
+// main js
+
+// ==================== IMAGE CAROUSEL (Final Gallery) ====================
+
+  
+class ImageCarousel {
+    constructor() {
+        this.currentSlide = 0;
+        this.imageUrls = imageUrls;
+        this.totalSlides = this.imageUrls.length;
+        this.carouselInner = document.getElementById('carouselInner');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.dotsContainer = document.getElementById('dotsContainer');
+        this.currentSlideSpan = document.getElementById('currentSlide');
+        this.totalSlidesSpan = document.getElementById('totalSlides');
+        this.autoPlayInterval = null;
+
+        if (this.carouselInner) {
+            this.init();
+        }
+    }
+
+    init() {
+        this.createSlides();
+        this.createDots();
+        this.attachEventListeners();
+        this.updateCarousel();
+        this.startAutoPlay();
+    }
+
+    createSlides() {
+        this.imageUrls.forEach((url, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = `Slide ${index + 1}`;
+            img.crossOrigin = 'anonymous';
+            slide.appendChild(img);
+            this.carouselInner.appendChild(slide);
+        });
+        this.totalSlidesSpan.textContent = this.totalSlides;
+    }
+
+    createDots() {
+        for (let i = 0; i < this.totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => this.goToSlide(i));
+            this.dotsContainer.appendChild(dot);
+        }
+    }
+
+    attachEventListeners() {
+        this.prevBtn.addEventListener('click', () => this.previousSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.previousSlide();
+            if (e.key === 'ArrowRight') this.nextSlide();
+        });
+
+        // Pause autoplay on hover
+        this.carouselInner.parentElement.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.carouselInner.parentElement.addEventListener('mouseleave', () => this.startAutoPlay());
+    }
+
+    updateCarousel() {
+        // Update carousel position
+        const offset = -this.currentSlide * 100;
+        this.carouselInner.style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSlide);
+        });
+
+        // Update counter
+        this.currentSlideSpan.textContent = this.currentSlide + 1;
+    }
+
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+
+    previousSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateCarousel();
+        this.resetAutoPlay();
+    }
+
+    startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => this.nextSlide(), 5000);
+    }
+
+    stopAutoPlay() {
+        clearInterval(this.autoPlayInterval);
+    }
+
+    resetAutoPlay() {
+        this.stopAutoPlay();
+        this.startAutoPlay();
+    }
+}
+// Hotel name variable (document title)
+const hotel_name = document.title || (document.querySelector && document.querySelector('title') ? document.querySelector('title').textContent : 'Hotel');
+window.hotel_name = hotel_name;
+
+// Apps Script endpoint (replace with your deployed Web App URL)
+const APPS_SCRIPT_URL = window.APPS_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbz_uHmFhqwvdXyLdwiB1GUc4M5st1bZYWtDVbty5YcqFW6xkMCqNX4BCDLB5RhigglAnQ/exec';
+
+// Generate Booking ID: prefix ATH + 7 random alphanumeric chars (total length 10)
+function generateBookingID() {
+  const prefix = 'ATH';
+  // Use only digits and UPPERCASE letters for booking ID suffix
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let suffix = '';
+  for (let i = 0; i < 7; i++) {
+    suffix += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return prefix + suffix;
+}
+// ==================== AMENITIES & RULES ====================
+function openPDF(pdfURL) {
+    window.open(pdfURL, "_blank", "width=900,height=700");
+}
+
+// ==================== CONTACT SECTION ====================
+
+// SVG Icons
+const icons = {
+    phone: '<svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
+    email: '<svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m2 6 10 7 10-7"></path></svg>',
+    address: '<svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>'
+};
+
+function renderContactItems() {
+    const container = document.getElementById('contactItems');
+    if (!container) return;
+    
+    // Phone Item
+    const phoneItem = document.createElement('div');
+    phoneItem.className = 'contact-item';
+    phoneItem.innerHTML = `
+        <div class="icon-box">
+            ${icons.phone}
+        </div>
+        <div class="contact-item-content">
+            <h3>Phone</h3>
+            <a href="tel:${contactData.phone.link}">${contactData.phone.number}</a>
+            <p class="description">${contactData.phone.description}</p>
+        </div>
+    `;
+    container.appendChild(phoneItem);
+
+    // Email Item
+    const emailItem = document.createElement('div');
+    emailItem.className = 'contact-item';
+    emailItem.innerHTML = `
+        <div class="icon-box">
+            ${icons.email}
+        </div>
+        <div class="contact-item-content">
+            <h3>Email</h3>
+            <a href="mailto:${contactData.email.link}">${contactData.email.address}</a>
+            <p class="description">${contactData.email.description}</p>
+        </div>
+    `;
+    container.appendChild(emailItem);
+
+    // Address Item
+    const addressItem = document.createElement('div');
+    addressItem.className = 'contact-item';
+    addressItem.innerHTML = `
+        <div class="icon-box">
+            ${icons.address}
+        </div>
+        <div class="contact-item-content">
+            <h3>Address</h3>
+            <p>${contactData.address.line1}</p>
+            <p>${contactData.address.line2}</p>
+        </div>
+    `;
+    container.appendChild(addressItem);
+}
+
+function setMapUrl() {
+    const mapIframe = document.getElementById('mapIframe');
+    if (mapIframe) {
+        mapIframe.src = contactData.mapUrl;
+    }
+}
+
+// ==================== ROOMS SECTION ====================
+
+// Commission coefficient: commissionedPrice = COMMISSION_COEFFICIENT * generalPrice
+const COMMISSION_COEFFICIENT = 1.1
+window.COMMISSION_COEFFICIENT = COMMISSION_COEFFICIENT
+
+function applyCommission(value) {
+  if (value === null || value === undefined) return value
+  const n = Number(value) || 0
+  // Keep as integer currency (rounded)
+  return Math.round(n * COMMISSION_COEFFICIENT)
+}
+
+
+// DOM Elements (declared here, resolved on DOMContentLoaded)
+let roomsContainer
+let bookingModal
+let closeModal
+let bookingForm
+let businessBooking
+let businessFields
+let fullscreenModal
+let fullscreenClose
+let fullscreenImage
+let fullscreenContainer
+let totalPriceEl
+let selectedRoomNameEl
+let zoomInBtn
+let zoomOutBtn
+let zoomResetBtn
+let submitBtn
+
+let roomCostBreakupEl
+let adultCostBreakupEl
+let childCostBreakupEl
+let mealCostBreakupEl
+let roomCountEl
+let extraAdultCountEl
+let extraChildCountEl
+let mealPlanNameEl
+let nightCountEl
+let grandTotalEl
+let nightsValueEl
+
+// Current selected room
+let currentRoom = null
+let currentZoom = 1
+const MIN_ZOOM = 0.5
+const MAX_ZOOM = 4
+const ZOOM_STEP = 0.5
+
+// Touch and pan variables for fullscreen image
+let touchStartX = 0
+let touchStartY = 0
+let panX = 0
+let panY = 0
+let isDragging = false
+
+let roomsData = window.roomsData || []
+
+// Initialize the rooms app
+function initRooms() {
+  renderRooms()
+  setupEventListeners()
+  setMinDates()
+}
+
+// Render all room cards
+function renderRooms() {
+  roomsContainer.innerHTML = ""
+
+  roomsData.forEach((room) => {
+    const card = createRoomCard(room)
+    roomsContainer.appendChild(card)
+  })
+}
+
+// Update meal plan select options based on `window.mealPlanPrices`
+function updateMealPlanOptions() {
+  const select = document.getElementById("mealPlan")
+  if (!select) return
+
+  const mealPrices = window.mealPlanPrices || { none: 0, breakfast: 500, halfBoard: 1000, fullBoard: 1500 }
+  const labels = {
+    none: "Room Only (No Meals)",
+    breakfast: "Breakfast Only",
+    halfBoard: "Half Board (Breakfast + Dinner)",
+    fullBoard: "Full Board (All Meals)",
+  }
+
+  const order = ["none", "breakfast", "halfBoard", "fullBoard"]
+  const currentValue = select.value
+
+  // Rebuild options
+  select.innerHTML = ""
+  order.forEach((key) => {
+    const opt = document.createElement("option")
+    opt.value = key
+    const price = Number(mealPrices[key]) || 0
+    const per = key === "none" ? "" : "/person"
+    opt.text = `${labels[key]} - ₹ ${price.toLocaleString()}${per}`
+    select.appendChild(opt)
+  })
+
+  // Restore previous selection if still valid
+  if (order.includes(currentValue)) select.value = currentValue
+}
+
+// Create a single room card
+function createRoomCard(room) {
+  const card = document.createElement("div")
+  card.className = "room-card"
+  card.innerHTML = `
+    <div class="carousel">
+      <div class="main-image-container" data-room-id="${room.id}">
+        <img src="${room.images[0]}" alt="${room.title}" class="main-image" data-room-id="${room.id}">
+      </div>
+      <div class="thumbnails">
+        ${room.images
+          .map(
+            (img, index) => `
+          <img src="${img}" alt="Thumbnail ${index + 1}" class="thumbnail ${index === 0 ? "active" : ""}" 
+               data-room-id="${room.id}" data-index="${index}">
+        `,
+          )
+          .join("")}
+      </div>
+    </div>
+    <div class="card-content">
+      <h3 class="room-title">${room.title}</h3>
+      <p class="room-price">₹ ${room.price.toLocaleString()} <span>/ room / night</span></p>
+      <button class="reserve-btn" data-room-id="${room.id}">Reserve Now</button>
+    </div>
+  `
+
+  return card
+}
+
+// Setup event listeners
+function setupEventListeners() {
+  // Thumbnail clicks
+  roomsContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("thumbnail")) {
+      handleThumbnailClick(e.target)
+    }
+
+    if (e.target.classList.contains("main-image")) {
+      handleMainImageClick(e.target)
+    }
+
+    if (e.target.classList.contains("reserve-btn")) {
+      handleReserveClick(e.target)
+    }
+  })
+
+  // Horizontal scroll buttons for rooms
+  const scrollLeftBtn = document.getElementById("scrollLeftBtn")
+  const scrollRightBtn = document.getElementById("scrollRightBtn")
+  if (roomsContainer && scrollLeftBtn && scrollRightBtn) {
+    const scrollStep = () => Math.max(200, Math.floor(roomsContainer.clientWidth * 0.8))
+    scrollLeftBtn.addEventListener("click", () => {
+      roomsContainer.scrollBy({ left: -scrollStep(), behavior: "smooth" })
+    })
+    scrollRightBtn.addEventListener("click", () => {
+      roomsContainer.scrollBy({ left: scrollStep(), behavior: "smooth" })
+    })
+  }
+
+  // Modal close
+  closeModal.addEventListener("click", () => {
+    bookingModal.classList.remove("active")
+  })
+
+  bookingModal.addEventListener("click", (e) => {
+    if (e.target === bookingModal) {
+      bookingModal.classList.remove("active")
+    }
+  })
+
+  // Business booking toggle
+  businessBooking.addEventListener("change", () => {
+    businessFields.classList.toggle("active", businessBooking.checked)
+  })
+
+  // Form inputs for price calculation
+  const priceInputs = ["numRooms", "numAdults", "numChildren", "checkIn", "checkOut", "mealPlan"]
+  priceInputs.forEach((id) => {
+    document.getElementById(id).addEventListener("change", calculatePrice)
+  })
+
+  // Price Breakup header toggle (only toggles the collapsible rows)
+  const priceBreakupHeader = document.getElementById("priceBreakupHeader")
+  const priceBreakupEl = document.getElementById("priceBreakupCollapsible")
+  const priceBreakupLabel = document.getElementById("priceBreakupLabel")
+  if (priceBreakupHeader && priceBreakupEl && priceBreakupLabel) {
+    // Initialize label based on current expanded state
+    const initExpanded = priceBreakupEl.classList.contains("expanded") || priceBreakupHeader.getAttribute("aria-expanded") === "true"
+    priceBreakupHeader.setAttribute("aria-expanded", String(initExpanded))
+    priceBreakupLabel.textContent = initExpanded ? "Close Price Breakup" : "Open Price Breakup"
+
+    const setLabel = (expanded) => {
+      priceBreakupLabel.textContent = expanded ? "Close Price Breakup" : "Open Price Breakup"
+    }
+
+    const toggleBreakup = () => {
+      const expanded = priceBreakupEl.classList.toggle("expanded")
+      priceBreakupHeader.setAttribute("aria-expanded", String(expanded))
+      setLabel(expanded)
+    }
+
+    priceBreakupHeader.addEventListener("click", toggleBreakup)
+
+    // Also support keyboard Enter/Space
+    priceBreakupHeader.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault()
+        toggleBreakup()
+      }
+    })
+  }
+
+  document.querySelectorAll(".counter-btn").forEach((btn) => {
+    btn.addEventListener("click", handleCounterClick)
+  })
+
+  submitBtn.addEventListener("click", handleFormSubmit)
+
+  // Fullscreen modal close
+  fullscreenClose.addEventListener("click", closeFullscreen)
+
+  fullscreenModal.addEventListener("click", (e) => {
+    if (e.target === fullscreenModal) {
+      closeFullscreen()
+    }
+  })
+
+  zoomInBtn.addEventListener("click", () => {
+    if (currentZoom < MAX_ZOOM) {
+      currentZoom += ZOOM_STEP
+      applyZoom()
+    }
+  })
+
+  zoomOutBtn.addEventListener("click", () => {
+    if (currentZoom > MIN_ZOOM) {
+      currentZoom -= ZOOM_STEP
+      applyZoom()
+    }
+  })
+
+  zoomResetBtn.addEventListener("click", () => {
+    currentZoom = 1
+    panX = 0
+    panY = 0
+    applyZoom()
+  })
+
+  // Touch and click-drag panning for fullscreen image
+  // Mouse down - start dragging
+  fullscreenImage.addEventListener("mousedown", (e) => {
+    if (currentZoom > 1) {
+      isDragging = true
+      touchStartX = e.clientX
+      touchStartY = e.clientY
+      fullscreenImage.style.cursor = "grabbing"
+    }
+  })
+
+  // Mouse move - pan while dragging
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging && currentZoom > 1) {
+      const deltaX = e.clientX - touchStartX
+      const deltaY = e.clientY - touchStartY
+
+      panX += deltaX
+      panY += deltaY
+
+      // Limit pan to prevent panning too far
+      const maxPanX = (fullscreenImage.offsetWidth * currentZoom - fullscreenImage.offsetWidth) / 2
+      const maxPanY = (fullscreenImage.offsetHeight * currentZoom - fullscreenImage.offsetHeight) / 2
+      panX = Math.max(-maxPanX, Math.min(maxPanX, panX))
+      panY = Math.max(-maxPanY, Math.min(maxPanY, panY))
+
+      touchStartX = e.clientX
+      touchStartY = e.clientY
+
+      applyZoom()
+    }
+  })
+
+  // Mouse up - stop dragging
+  document.addEventListener("mouseup", () => {
+    if (isDragging) {
+      isDragging = false
+      fullscreenImage.style.cursor = "grab"
+    }
+  })
+
+  // Double-click to zoom in
+  fullscreenImage.addEventListener("dblclick", (e) => {
+    e.preventDefault()
+    if (currentZoom < MAX_ZOOM) {
+      currentZoom += ZOOM_STEP
+      applyZoom()
+    }
+  })
+
+  // Right-click to zoom out
+  fullscreenImage.addEventListener("contextmenu", (e) => {
+    e.preventDefault()
+    if (currentZoom > MIN_ZOOM) {
+      currentZoom -= ZOOM_STEP
+      applyZoom()
+    }
+  })
+
+  // Touch start
+  fullscreenImage.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1 && currentZoom > 1) {
+      isDragging = true
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
+    }
+  })
+
+  // Touch move - pan while dragging
+  fullscreenImage.addEventListener("touchmove", (e) => {
+    if (isDragging && e.touches.length === 1 && currentZoom > 1) {
+      e.preventDefault()
+      const deltaX = e.touches[0].clientX - touchStartX
+      const deltaY = e.touches[0].clientY - touchStartY
+
+      panX += deltaX
+      panY += deltaY
+
+      // Limit pan to prevent panning too far
+      const maxPanX = (fullscreenImage.offsetWidth * currentZoom - fullscreenImage.offsetWidth) / 2
+      const maxPanY = (fullscreenImage.offsetHeight * currentZoom - fullscreenImage.offsetHeight) / 2
+      panX = Math.max(-maxPanX, Math.min(maxPanX, panX))
+      panY = Math.max(-maxPanY, Math.min(maxPanY, panY))
+
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
+
+      applyZoom()
+    }
+  })
+
+  // Touch end
+  fullscreenImage.addEventListener("touchend", () => {
+    isDragging = false
+  })
+
+  // Keyboard escape
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      bookingModal.classList.remove("active")
+      closeFullscreen()
+    }
+    if (fullscreenModal.classList.contains("active")) {
+      if (e.key === "+" || e.key === "=") {
+        if (currentZoom < MAX_ZOOM) {
+          currentZoom += ZOOM_STEP
+          applyZoom()
+        }
+      }
+      if (e.key === "-") {
+        if (currentZoom > MIN_ZOOM) {
+          currentZoom -= ZOOM_STEP
+          applyZoom()
+        }
+      }
+    }
+  })
+}
+
+function handleCounterClick(e) {
+  const targetId = e.target.dataset.target
+  const input = document.getElementById(targetId)
+  const currentValue = Number.parseInt(input.value) || 0
+  const minValue = Number.parseInt(input.min) || 0
+
+  if (e.target.classList.contains("plus")) {
+    // Enforce total-person cap: max 3 persons per room (adults + children)
+    if (targetId === "numAdults" || targetId === "numChildren") {
+      const numRooms = Number.parseInt(document.getElementById("numRooms").value) || 1
+      const maxPersons = numRooms * 3
+      const currentAdults = Number.parseInt(document.getElementById("numAdults").value) || 0
+      const currentChildren = Number.parseInt(document.getElementById("numChildren").value) || 0
+      const totalPersons = currentAdults + currentChildren
+
+      // Check if incrementing would exceed the cap (totalPersons + 1 > maxPersons)
+      if (totalPersons + 1 > maxPersons) {
+        // User tried to exceed cap: show limit note
+        const limitNote = document.getElementById("limitNote")
+        if (limitNote) limitNote.classList.add("show")
+        // Do not increase past the cap
+      } else {
+        // Successfully incremented: hide note
+        input.value = currentValue + 1
+        const limitNote = document.getElementById("limitNote")
+        if (limitNote) limitNote.classList.remove("show")
+      }
+    } else if (targetId === "numRooms") {
+      input.value = currentValue + 1
+      // Hide note when rooms increase (cap increases)
+      const limitNote = document.getElementById("limitNote")
+      if (limitNote) limitNote.classList.remove("show")
+    }
+  } else if (e.target.classList.contains("minus")) {
+    if (currentValue > minValue) {
+      // Special handling for rooms decrease: apply smart reset logic
+      if (targetId === "numRooms") {
+        const newRooms = currentValue - 1
+        const currentAdults = Number.parseInt(document.getElementById("numAdults").value) || 0
+        const currentChildren = Number.parseInt(document.getElementById("numChildren").value) || 0
+
+        // Check if children were added (numChildren > 0)
+        if (currentChildren === 0) {
+          // No children: reset adults to 1x(newRooms), children to 0
+          document.getElementById("numAdults").value = newRooms * 1
+          document.getElementById("numChildren").value = 0
+        } else {
+          // Children were added: reset adults to 2x(newRooms), children to newRooms
+          document.getElementById("numAdults").value = newRooms * 1
+          document.getElementById("numChildren").value = 1
+        }
+      }
+
+      input.value = currentValue - 1
+    }
+    // Hide limit note when user decreases (successful reduction)
+    const limitNote = document.getElementById("limitNote")
+    if (limitNote) limitNote.classList.remove("show")
+  }
+
+  calculatePrice()
+}
+
+function applyZoom() {
+  fullscreenImage.style.transform = `scale(${currentZoom}) translate(${panX / currentZoom}px, ${panY / currentZoom}px)`
+}
+
+function closeFullscreen() {
+  fullscreenModal.classList.remove("active")
+  currentZoom = 1
+  panX = 0
+  panY = 0
+  applyZoom()
+}
+
+// Handle thumbnail click
+function handleThumbnailClick(thumbnail) {
+  const roomId = Number.parseInt(thumbnail.dataset.roomId)
+  const index = Number.parseInt(thumbnail.dataset.index)
+  const room = roomsData.find((r) => r.id === roomId)
+
+  // Update main image
+  const mainImage = document.querySelector(`.main-image[data-room-id="${roomId}"]`)
+  mainImage.src = room.images[index]
+
+  // Update active thumbnail
+  const thumbnails = document.querySelectorAll(`.thumbnail[data-room-id="${roomId}"]`)
+  thumbnails.forEach((t) => t.classList.remove("active"))
+  thumbnail.classList.add("active")
+}
+
+// Handle main image click - open fullscreen
+function handleMainImageClick(image) {
+  fullscreenImage.src = image.src
+  currentZoom = 1
+  applyZoom()
+  fullscreenModal.classList.add("active")
+}
+
+// Handle reserve button click
+function handleReserveClick(button) {
+  const roomId = Number.parseInt(button.dataset.roomId)
+  currentRoom = roomsData.find((r) => r.id === roomId)
+
+  selectedRoomNameEl.textContent = currentRoom.title
+  bookingModal.classList.add("active")
+
+  // Reset form
+  bookingForm.reset()
+  document.getElementById("numRooms").value = 1
+  document.getElementById("numAdults").value = 1
+  document.getElementById("numChildren").value = 0
+  businessFields.classList.remove("active")
+  setMinDates()
+  calculatePrice()
+}
+
+// Fetch prices from Google Sheets and update global variables
+async function fetchPricesFromGoogleSheets() {
+  try {
+    // Construct the Google Sheets API URL
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${GOOGLE_SHEET_ID}/values/${SHEET_NAME}?key=${GOOGLE_API_KEY}`;
+    
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const rows = data.values;
+    
+    if (!rows || rows.length === 0) {
+      console.error('No data found in Google Sheet');
+      return false;
+    }
+    
+    // First row contains headers
+    const headers = rows[0];
+    
+    // Find the row matching the hotel_ID
+    let hotelRow = null;
+    for (let i = 1; i < rows.length; i++) {
+      if (rows[i][0] === hotel_ID) {
+        hotelRow = rows[i];
+        break;
+      }
+    }
+    
+    if (!hotelRow) {
+      console.error(`No data found for hotel_ID: ${hotel_ID}`);
+      return false;
+    }
+    
+    // Create a mapping of header names to values
+    const priceData = {};
+    for (let i = 0; i < headers.length; i++) {
+      priceData[headers[i].toLowerCase().replace(/\s+/g, '_')] = hotelRow[i];
+    }
+    
+    // Helper function to parse prices (removes currency symbols and commas)
+    const parsePrice = (priceString) => {
+      if (!priceString) return null;
+      // Remove currency symbols (₹ , $, £, €, etc.) and commas, then parse as float
+      const cleaned = String(priceString).replace(/[^\d.]/g, '');
+      const parsed = parseFloat(cleaned);
+      return isNaN(parsed) ? null : parsed;
+    };
+    
+    // Update global price variables (store general prices and compute commissioned prices)
+    if (priceData.extra_adult_price !== undefined) {
+      const price = parsePrice(priceData.extra_adult_price);
+      window.generalGuestPrice = price !== null ? price : (window.generalGuestPrice || window.guestPrice || 500);
+      window.guestPrice = applyCommission(window.generalGuestPrice);
+    }
+
+    if (priceData.extra_child_price !== undefined) {
+      const price = parsePrice(priceData.extra_child_price);
+      window.generalChildPrice = price !== null ? price : (window.generalChildPrice || window.childPrice || 250);
+      window.childPrice = applyCommission(window.generalChildPrice);
+    }
+    
+    // Update meal plan prices
+    // Normalize sheet headers to camelCase keys used by the UI: none, breakfast, halfBoard, fullBoard
+    const sheetToCamel = (sheetKey) => {
+      // sheetKey is like 'meal_halfboard' or 'meal_fullboard' or 'meal_breakfast' or 'meal_none'
+      if (!sheetKey) return null;
+      const k = sheetKey.replace(/^meal_/, '').toLowerCase();
+      if (k === 'halfboard') return 'halfBoard';
+      if (k === 'fullboard') return 'fullBoard';
+      return k; // 'none' or 'breakfast'
+    };
+
+    // Iterate over all priceData keys and pick meal_* entries
+    Object.keys(priceData).forEach((pdKey) => {
+      if (pdKey.startsWith('meal_')) {
+        const camel = sheetToCamel(pdKey);
+        const price = parsePrice(priceData[pdKey]);
+        if (camel && price !== null) {
+          window.generalMealPlanPrices = window.generalMealPlanPrices || {};
+          window.generalMealPlanPrices[camel] = price;
+          window.mealPlanPrices[camel] = applyCommission(price);
+        }
+      }
+    });
+    
+    // Update room prices (store general price on room.generalPrice and set commissioned room.price)
+    for (let i = 1; i <= 20; i++) {
+      const roomKey = `room${i}_price`;
+      if (priceData[roomKey] !== undefined && window.roomsData[i - 1]) {
+        const price = parsePrice(priceData[roomKey]);
+        const general = price !== null ? price : (window.roomsData[i - 1].generalPrice || window.roomsData[i - 1].price);
+        window.roomsData[i - 1].generalPrice = general;
+        window.roomsData[i - 1].price = applyCommission(general);
+      }
+    }
+    
+    console.log('✓ Prices successfully updated from Google Sheets');
+
+    // Build an array of rooms that were actually fetched from the sheet
+    const updatedRoomPrices = [];
+    for (let i = 1; i <= 20; i++) {
+      const roomKey = `room${i}_price`;
+      if (priceData[roomKey] !== undefined && window.roomsData[i - 1]) {
+        updatedRoomPrices.push({ [`Room${i}`]: window.roomsData[i - 1].price });
+      }
+    }
+
+    console.log('Updated Prices:', {
+      guestPrice: window.guestPrice,
+      childPrice: window.childPrice,
+      mealPlanPrices: window.mealPlanPrices,
+      roomPrices: updatedRoomPrices
+    });
+    
+    // Re-render the room cards with updated prices
+    if (typeof renderRooms === 'function') {
+      renderRooms();
+    }
+    // Update meal plan dropdown options if function exists
+    if (typeof updateMealPlanOptions === 'function') {
+      updateMealPlanOptions();
+    }
+    
+    return true;
+    
+  } catch (error) {
+    console.error('Error fetching prices from Google Sheets:', error);
+    console.warn('Using default prices. Please check your Google Sheets configuration.');
+    return false;
+  }
+}
+
+// Update meal plan select options based on `window.mealPlanPrices`
+function updateMealPlanOptions() {
+  const select = document.getElementById("mealPlan")
+  if (!select) return
+
+  const mealPrices = window.mealPlanPrices || { none: 0, breakfast: 500, halfBoard: 1000, fullBoard: 1500 }
+  const labels = {
+    none: "Room Only (No Meals)",
+    breakfast: "Breakfast Only",
+    halfBoard: "Half Board (Breakfast + Dinner)",
+    fullBoard: "Full Board (All Meals)",
+  }
+
+  const order = ["none", "breakfast", "halfBoard", "fullBoard"]
+  const currentValue = select.value
+
+  // Rebuild options
+  select.innerHTML = ""
+  order.forEach((key) => {
+    const opt = document.createElement("option")
+    opt.value = key
+    const price = Number(mealPrices[key]) || 0
+    const per = key === "none" ? "" : "/person"
+    opt.text = `${labels[key]} - ₹ ${price.toLocaleString()}${per}`
+    select.appendChild(opt)
+  })
+
+  // Restore previous selection if still valid
+  if (order.includes(currentValue)) select.value = currentValue
+}
+
+// Set minimum dates for check-in/check-out
+function setMinDates() {
+  const today = new Date().toISOString().split("T")[0]
+  document.getElementById("checkIn").min = today
+  document.getElementById("checkOut").min = today
+}
+
+// Calculate total price
+function calculatePrice() {
+  if (!currentRoom) return
+
+  const numRooms = Number.parseInt(document.getElementById("numRooms").value) || 1
+  let numAdults = Number.parseInt(document.getElementById("numAdults").value) || 1
+  const numChildren = Number.parseInt(document.getElementById("numChildren").value) || 0
+  const checkIn = document.getElementById("checkIn").value
+  const checkOut = document.getElementById("checkOut").value
+  const mealPlan = document.getElementById("mealPlan").value
+
+  // Read dynamic prices from global window (updated by data.js fetch)
+  const guestPrice = window.guestPrice || 500
+  const childPrice = window.childPrice || 250
+  const mealPlanPrices = window.mealPlanPrices || {
+    none: 0,
+    breakfast: 500,
+    halfBoard: 1000,
+    fullBoard: 1500,
+  }
+
+  let numNights = 1
+
+  if (checkIn && checkOut) {
+    const checkInDate = new Date(checkIn)
+    const checkOutDate = new Date(checkOut)
+    const diffTime = checkOutDate - checkInDate
+    numNights = Math.max(1, Math.ceil(diffTime / (1000 * 60 * 60 * 24)))
+
+    // Update checkout min date
+    document.getElementById("checkOut").min = checkIn
+  }
+
+  // Enforce hard cap: total persons (adults + children) cannot exceed 3 per room
+  const maxPersons = numRooms * 3
+  let totalPersons = numAdults + numChildren
+  if (totalPersons > maxPersons) {
+    // Reduce children first to fit within cap, then adults if needed (keep adults on priority)
+    let overflow = totalPersons - maxPersons
+    if (numChildren >= overflow) {
+      numChildren = numChildren - overflow
+    } else {
+      // remove all children first, then reduce adults by remaining overflow
+      overflow = overflow - numChildren
+      numChildren = 0
+      // ensure at least 1 adult remains
+      numAdults = Math.max(1, numAdults - overflow)
+    }
+    document.getElementById("numAdults").value = numAdults
+    document.getElementById("numChildren").value = numChildren
+    // Do not show limit note during automatic enforcement; only show on user attempt in handleCounterClick
+  }
+
+    // Determine included guests capacity: 2 persons per room (adults or children)
+    const includedGuests = numRooms * 2
+    let remainingIncluded = includedGuests
+
+    // Allocate included slots to adults first, then children
+    const includedAdults = Math.min(numAdults, remainingIncluded)
+    remainingIncluded -= includedAdults
+    const includedChildren = Math.min(numChildren, remainingIncluded)
+    remainingIncluded -= includedChildren
+
+    // Extra (chargeable) guests are those beyond the included capacity
+    const extraAdults = Math.max(0, numAdults - includedAdults)
+    const extraChildren = Math.max(0, numChildren - includedChildren)
+
+    // Update visible counts/labels for the price-breakup
+    if (roomCountEl) roomCountEl.textContent = numRooms
+    if (extraAdultCountEl) extraAdultCountEl.textContent = extraAdults
+    if (extraChildCountEl) extraChildCountEl.textContent = extraChildren
+
+    // Human-friendly meal plan names
+    const mealPlanDisplayNames = {
+      none: "Room Only",
+      breakfast: "Breakfast Only",
+      halfBoard: "Half Board",
+      fullBoard: "Full Board",
+    }
+    const mealDisplay = mealPlanDisplayNames[mealPlan] || mealPlan
+    if (mealPlanNameEl) mealPlanNameEl.textContent = mealDisplay
+
+    // Per-night components
+    const perNightRoomCost = currentRoom.price * numRooms
+    const perNightAdultsCost = guestPrice * extraAdults
+    const perNightChildrenCost = childPrice * extraChildren
+    const mealPlanPrice = mealPlanPrices[mealPlan] || 0
+    const totalGuests = numAdults + numChildren
+    const perNightMealCost = mealPlanPrice * totalGuests
+
+    // Sum per-night components. Show all breakup values as per 1 night
+    const perNightTotal = perNightRoomCost + perNightAdultsCost + perNightChildrenCost + perNightMealCost
+    const totalPrice = perNightTotal // Note: intentionally per-night (not multiplied by nights)
+
+    // Show per-night totals in the breakup (do NOT multiply by number of nights)
+    const roomCost = perNightRoomCost
+    const adultsCost = perNightAdultsCost
+    const childrenCost = perNightChildrenCost
+    const mealCost = perNightMealCost
+
+    // Update night count and grand total (grand = per-night Sum Total * number of nights)
+    if (nightCountEl) nightCountEl.textContent = numNights
+    if (nightsValueEl) nightsValueEl.textContent = numNights
+    const grand = perNightTotal * numNights
+    if (grandTotalEl) grandTotalEl.textContent = `₹ ${grand.toLocaleString()}`
+
+    roomCostBreakupEl.textContent = `+ ₹ ${roomCost.toLocaleString()}`
+    adultCostBreakupEl.textContent = `+ ₹ ${adultsCost.toLocaleString()}`
+    childCostBreakupEl.textContent = `+ ₹ ${childrenCost.toLocaleString()}`
+    mealCostBreakupEl.textContent = `+ ₹ ${mealCost.toLocaleString()}`
+    totalPriceEl.textContent = `₹ ${totalPrice.toLocaleString()}`
+}
+
+// Handle form submission
+function handleFormSubmit(e) {
+  e.preventDefault()
+
+  if (!bookingForm.checkValidity()) {
+    bookingForm.reportValidity()
+    return
+  }
+
+  // Validate business fields if checked
+  if (businessBooking.checked) {
+    const gstin = document.getElementById("gstin").value
+    const companyName = document.getElementById("companyName").value
+    const companyAddress = document.getElementById("companyAddress").value
+
+    if (!gstin || !companyName || !companyAddress) {
+      alert("Please fill in all business details")
+      return
+    }
+  }
+
+  // Collect form data
+  const formData = {
+    room: currentRoom.title,
+    roomPrice: currentRoom.price,
+    fullName: document.getElementById("fullName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    checkIn: document.getElementById("checkIn").value,
+    checkOut: document.getElementById("checkOut").value,
+    mealPlan: document.getElementById("mealPlan").value,
+    numRooms: document.getElementById("numRooms").value,
+    numAdults: document.getElementById("numAdults").value,
+    numChildren: document.getElementById("numChildren").value,
+    specialRequest: document.getElementById("specialRequest").value,
+    isBusinessBooking: businessBooking.checked,
+    totalPrice: totalPriceEl.textContent,
+  }
+
+  if (businessBooking.checked) {
+    formData.gstin = document.getElementById("gstin").value
+    formData.companyName = document.getElementById("companyName").value
+    formData.companyAddress = document.getElementById("companyAddress").value
+  }
+
+  // Generate Booking ID and prepare data to send to Google Sheet via Apps Script
+  const bookingID = generateBookingID()
+  formData.bookingID = bookingID
+  formData.roomId = currentRoom && currentRoom.id ? currentRoom.id : ''
+
+  // Build the row to match the sheet headings provided by the user
+  // Order: Booking_ID, Sheet_name, Hotel_ID, Hotel_name, Full_name, Email, Phone,
+  // Check_in_date, Check_out_date, Meal_plan, Room_name, Room_id, n_rooms,
+  // n_adults, n_child, Special_request, Business_booking, Gstin, Company_name,
+  // Room13_Price, Company_address
+  // Resolve hotel ID: prefer window.hotel_ID, fall back to `hotel_ID` defined in data.js
+  const effectiveHotelID = (typeof window !== 'undefined' && window.hotel_ID !== undefined)
+    ? window.hotel_ID
+    : (typeof hotel_ID !== 'undefined' ? hotel_ID : '')
+
+  // The spreadsheet file has a tab named 'Sheet1' where rows should be appended.
+  // We must send payload.sheetName = 'Sheet1' so Apps Script appends to that tab,
+  // and put the user-configured `SHEET_NAME` value into the row's "Sheet Name" column.
+  const appendTabName = 'Sheet1'
+  const sheetNameForRow = (typeof window !== 'undefined' && window.SHEET_NAME)
+    ? window.SHEET_NAME
+    : (typeof SHEET_NAME !== 'undefined' ? SHEET_NAME : '')
+
+  // Build row to match the user's spreadsheet column order:
+  // [Booking_ID, Sheet_name, Hotel_ID, Hotel_name, Full_name, Email, Phone,
+  //  Check_in_date, Check_out_date, Meal_plan, Room_name, Room_id, n_rooms,
+  //  n_adults, n_child, Special_request, Business_booking, Gstin, Company_name,
+  //  Company_address, Hotel_url, Amount_payable]
+  // Hotel_url: current window URL; Amount_payable: numeric grand total (₹  removed)
+  const hotelUrl = (typeof window !== 'undefined' && window.location && window.location.href) ? window.location.href : ''
+  // Amount payable: prefer `grandTotalEl` text if present, else `formData.totalPrice`
+  const rawAmountText = (typeof window !== 'undefined' && typeof grandTotalEl !== 'undefined' && grandTotalEl && grandTotalEl.textContent)
+    ? grandTotalEl.textContent
+    : (formData.totalPrice || '')
+  const amountNumeric = ('' + rawAmountText).replace(/[^0-9.\-]/g, '')
+  const row = [
+    bookingID || '', // Booking_ID
+    sheetNameForRow || '', // Sheet_name (value from data.js)
+    effectiveHotelID || '', // Hotel_ID
+    hotel_name || '', // Hotel_name
+    formData.fullName || '', // Full_name
+    formData.email || '', // Email
+    formData.phone || '', // Phone
+    formFormValueOrEmpty(formData.checkIn), // Check_in_date
+    formFormValueOrEmpty(formData.checkOut), // Check_out_date
+    formData.mealPlan || '', // Meal_plan
+    formData.room || '', // Room_name
+    formData.roomId || '', // Room_id
+    formData.numRooms || '', // n_rooms
+    formData.numAdults || '', // n_adults
+    formData.numChildren || '', // n_child
+    formData.specialRequest || '', // Special_request
+    formData.isBusinessBooking ? 'Yes' : 'No', // Business_booking
+    formData.gstin || '', // Gstin
+    formData.companyName || '', // Company_name
+    formData.companyAddress || '', // Company_address
+    hotelUrl || '', // Hotel_url (current page URL)
+    amountNumeric || '', // Amount_payable (numeric, ₹  removed)
+  ]
+
+  // Helper to ensure blank strings instead of undefined/null are sent
+  function formFormValueOrEmpty(v) { return (v === undefined || v === null) ? '' : v }
+
+  // Send to Google Apps Script Web App (deployed) which will append the row
+  if (APPS_SCRIPT_URL && APPS_SCRIPT_URL.indexOf('REPLACE_WITH_ID') === -1) {
+    // Use URL-encoded form data to avoid preflight/CORS issues with JSON
+    // Apps Script expects `values` parameter to contain a JSON string of the full payload
+    const formPayload = new URLSearchParams()
+    // Send to the actual tab 'Sheet1' so Apps Script appends into that tab.
+    formPayload.append('values', JSON.stringify({ sheetName: appendTabName, values: row }))
+    console.log('Sending booking payload to Apps Script (form-encoded):', { sheetName: appendTabName, values: row })
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: formPayload,
+    })
+      .then(async (res) => {
+        // Try to parse JSON body for helpful debugging
+        let json = {}
+        try { json = await res.json() } catch (e) { json = {} }
+        return { ok: res.ok, status: res.status, body: json }
+      })
+      .then((result) => {
+        if (result && result.body && result.body.status === 'success') {
+          alert(`Booking submitted successfully!\n\nBooking ID: ${bookingID}\nRoom: ${formData.room}\nTotal: ${formData.totalPrice}\n\nWe will contact you shortly at ${formData.email}`)
+        } else {
+          console.warn('Apps Script response:', result)
+          alert(`Booking submitted locally. Booking ID: ${bookingID}\n(Unable to save to sheet right now)`)
+        }
+      })
+      .catch((err) => {
+        console.error('Error sending booking to sheet:', err && err.message ? err.message : err, '\nRow payload:', row)
+        alert(`Booking submitted locally. Booking ID: ${bookingID}\n(Failed to send to sheet)`)
+      })
+      .finally(() => {
+        bookingModal.classList.remove('active')
+        bookingForm.reset()
+      })
+  } else {
+    console.warn('APPS_SCRIPT_URL not configured; skipping sheet send')
+    alert(`Booking submitted successfully!\n\nBooking ID: ${bookingID}\nRoom: ${formData.room}\nTotal: ${formData.totalPrice}\n\nWe will contact you shortly at ${formData.email}`)
+    bookingModal.classList.remove('active')
+    bookingForm.reset()
+  }
+}
+
+// ==================== INITIALIZE ON PAGE LOAD ====================
+document.addEventListener('DOMContentLoaded', function() {
+  // Resolve DOM elements now that DOM is ready
+  roomsContainer = document.getElementById("roomsContainer")
+  bookingModal = document.getElementById("bookingModal")
+  closeModal = document.getElementById("closeModal")
+  bookingForm = document.getElementById("bookingForm")
+  businessBooking = document.getElementById("businessBooking")
+  businessFields = document.getElementById("businessFields")
+  fullscreenModal = document.getElementById("fullscreenModal")
+  fullscreenClose = document.getElementById("fullscreenClose")
+  fullscreenImage = document.getElementById("fullscreenImage")
+  fullscreenContainer = document.getElementById("fullscreenContainer")
+  totalPriceEl = document.getElementById("totalPrice")
+  selectedRoomNameEl = document.getElementById("selectedRoomName")
+  zoomInBtn = document.getElementById("zoomIn")
+  zoomOutBtn = document.getElementById("zoomOut")
+  zoomResetBtn = document.getElementById("zoomReset")
+  submitBtn = document.getElementById("submitBtn")
+
+  roomCostBreakupEl = document.getElementById("roomCostBreakup")
+  adultCostBreakupEl = document.getElementById("adultCostBreakup")
+  childCostBreakupEl = document.getElementById("childCostBreakup")
+  mealCostBreakupEl = document.getElementById("mealCostBreakup")
+  roomCountEl = document.getElementById("roomCount")
+  extraAdultCountEl = document.getElementById("extraAdultCount")
+  extraChildCountEl = document.getElementById("extraChildCount")
+  mealPlanNameEl = document.getElementById("mealPlanName")
+  nightCountEl = document.getElementById("nightCount")
+  grandTotalEl = document.getElementById("grandTotal")
+  nightsValueEl = document.getElementById("nightsValue")
+
+  // Refresh dynamic data references (rooms and pricing) which may be set later in the combined script
+  roomsData = window.roomsData || []
+  window.mealPlanPrices = window.mealPlanPrices || window.mealPlanPrices || { none:0, breakfast:500, halfBoard:1000, fullBoard:1500 }
+    // Initialize Carousel
+    new ImageCarousel();
+
+    // Set Welcome Note
+    const welcomeContent = document.getElementById('welcomeContent');
+    if (welcomeContent) {
+        welcomeContent.textContent = welcomeNote;
+    }
+
+    // Initialize Contact Section
+    renderContactItems();
+    setMapUrl();
+
+    // Apply commission to default/general prices so UI shows commissioned prices
+    // Convert existing globals (from data.js) which are general into commissioned values
+    try {
+      // Guest & child
+      window.generalGuestPrice = window.generalGuestPrice || window.guestPrice || 500
+      window.guestPrice = applyCommission(window.generalGuestPrice)
+
+      window.generalChildPrice = window.generalChildPrice || window.childPrice || 250
+      window.childPrice = applyCommission(window.generalChildPrice)
+
+      // Meal plans
+      window.generalMealPlanPrices = window.generalMealPlanPrices || {}
+      window.mealPlanPrices = window.mealPlanPrices || { none:0, breakfast:500, halfBoard:1000, fullBoard:1500 }
+      Object.keys(window.mealPlanPrices).forEach((k) => {
+        if (window.generalMealPlanPrices[k] === undefined) window.generalMealPlanPrices[k] = window.mealPlanPrices[k]
+        window.mealPlanPrices[k] = applyCommission(window.generalMealPlanPrices[k])
+      })
+
+      // Rooms: preserve generalPrice and set commissioned room.price
+      if (Array.isArray(window.roomsData)) {
+        window.roomsData.forEach((r) => {
+          if (r) {
+            r.generalPrice = r.generalPrice || r.price || 0
+            r.price = applyCommission(r.generalPrice)
+          }
+        })
+      }
+    } catch (err) {
+      console.warn('Error applying commission defaults:', err)
+    }
+
+    // Initialize Rooms Section
+    initRooms();
+
+    // Fetch prices from Google Sheets
+    fetchPricesFromGoogleSheets();
+});
+
+
+
+// data js
+
+   // ============================================
+// CONFIGURABLE DATA - EDIT THIS FILE TO CHANGE PROPERTY DETAILS
+// ============================================
+
+// ==================== GOOGLE SHEETS CONFIGURATION ====================
+// Hotel ID - Use this to identify your hotel in the Google Sheet
+const hotel_ID = 'htluk1';
+
+// Google Sheets API Configuration
+const GOOGLE_SHEET_ID = '1g35eSmHGFuwIwk9Vj6_vh8Fb-cMkKY2gBUHcposqp0E'; // Replace with your Sheet ID
+const GOOGLE_API_KEY = 'AIzaSyDf1IiBpWcqrgIfX2xK4UpMCfkkhd3MxOE'; // Replace with your API key
+const SHEET_NAME = 'Andhra Pradesh'; // Name of the sheet tab containing price data
+
+
+// ==================== IMAGE CAROUSEL (FIRST Gallery) ====================
+const imageUrls = [
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=600&fit=crop&q=80',
+    'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe3e?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=600&fit=crop&q=70',
+    'https://images.unsplash.com/photo-1495567720989-cebdbdd97913?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=900&h=600&fit=crop'
+];
+
+
+// ==================== WELCOME SECTION ====================
+const welcomeNote = "Welcome to our space! We're delighted to have you here. This is the beginning of something wonderful. Whether you're here to explore, learn, or connect, we're thrilled to be part of your journey. Let's make this experience memorable together.";
+
+// ==================== AMENITIES & RULES ====================
+let htl_amenities = "https://example.com/amenities.pdf";
+let htl_rules = "https://example.com/rules.pdf";
+
+// ==================== PRICING & ROOMS DATA ====================
+
+// Pricing Variables - Will be updated from Google Sheets on load
+window.guestPrice = 500 // Additional price per adult guest
+window.childPrice = 250 // Additional price per child
+
+window.mealPlanPrices = {
+  none: 0, // Room Only - no meal
+  breakfast: 500, // Breakfast Only
+  halfBoard: 1000, // Half Board (Breakfast + Dinner)
+  fullBoard: 1500, // Full Board (All Meals)
+}
+
+
+
+// Room Data Array - 20 Rooms
+window.roomsData = [
+  {
+    id: 1,
+    title: "Standard Single Room",
+    price: 2000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 2,
+    title: "Standard Double Room",
+    price: 2500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 3,
+    title: "Superior Single Room",
+    price: 3000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 4,
+    title: "Superior Double Room",
+    price: 3500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "Deluxe Single Room",
+    price: 4000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 6,
+    title: "Deluxe Double Room",
+    price: 4500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 7,
+    title: "Deluxe Twin Room",
+    price: 5000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 8,
+    title: "Premium Single Room",
+    price: 5500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 9,
+    title: "Premium Double Room",
+    price: 6000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 10,
+    title: "Executive Single Room",
+    price: 6500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 11,
+    title: "Executive Double Room",
+    price: 7000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 12,
+    title: "Executive Suite",
+    price: 7500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 13,
+    title: "Junior Suite",
+    price: 8000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 14,
+    title: "Business Suite",
+    price: 8500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 15,
+    title: "Luxury Suite",
+    price: 9000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 16,
+    title: "Grand Suite",
+    price: 9500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 17,
+    title: "Family Suite",
+    price: 10000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 18,
+    title: "Penthouse Suite",
+    price: 10500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 19,
+    title: "Presidential Suite",
+    price: 11000,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+  {
+    id: 20,
+    title: "Royal Suite",
+    price: 11500,
+    images: [
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+      "https://cdn.wallpapersafari.com/9/2/U8jznD.jpg",
+    ],
+  },
+]
+
+// ==================== CONTACT SECTION ====================
+const contactData = {
+    phone: {
+        number: "+1 (234) 567-890",
+        link: "+1234567890",
+        description: "Available Monday to Friday, 9am - 6pm"
+    },
+    email: {
+        address: "contact@example.com",
+        link: "contact@example.com",
+        description: "We'll respond within 24 hours"
+    },
+    address: {
+        line1: "123 Business Street",
+        line2: "San Francisco, CA 94105"
+    },
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0975508033556!2d-122.41941592346816!3d37.77492927124484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064c0d9c9d5%3A0xcd6d0d0c0d0c0d0c!2s123%20Business%20Street%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1234567890"
+};
+
+</script>
+
+    <!-- ==================== SECTION 1: FINAL GALLERY ==================== -->
+    <section class="section-gallery" id="gallery">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-inner" id="carouselInner"></div>
+
+                <!-- Navigation Arrows -->
+                <button class="carousel-nav carousel-nav-prev" id="prevBtn" aria-label="Previous slide">‹</button>
+                <button class="carousel-nav carousel-nav-next" id="nextBtn" aria-label="Next slide">›</button>
+
+                <!-- Counter -->
+                <div class="carousel-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+                </div>
+
+                <!-- Dot Navigation -->
+                <div class="carousel-dots" id="dotsContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 2: WELCOME ==================== -->
+    <section class="section-welcome" id="welcome">
+        <div class="welcome-card">
+            <header class="welcome-header">
+                <h1>Greetings</h1>
+                <div class="divider"></div>
+            </header>
+
+            <article class="welcome-article">
+                <p id="welcomeContent"></p>
+            </article>
+            <div class="welcome-button-container">
+        <button class="welcome-button">+ Add to Favourites</button>
+      </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 3: AMENITIES & RULES ==================== -->
+    <section class="section-amenities" id="amenities">
+        <div class="amenities-container">
+            <div class="btn-container">
+                <button class="amenities-button" onclick="openPDF(htl_amenities)">View Amenities</button>
+                <button class="amenities-button" onclick="openPDF(htl_rules)">View Rules</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION 4: ROOMS ==================== -->
+    <section class="rooms-section">
+        <div class="rooms-wrapper">
+            <!-- Heading with scroll buttons on left and right -->
+            <div class="rooms-header">
+                <button class="rooms-scroll-btn scroll-left" id="scrollLeftBtn" aria-label="Scroll rooms left">‹</button>
+                <h2 class="section-title">Our Rooms</h2>
+                <button class="rooms-scroll-btn scroll-right" id="scrollRightBtn" aria-label="Scroll rooms right">›</button>
+            </div>
+            <div class="rooms-container" id="roomsContainer"></div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <!-- Restructured modal with scrollable form and fixed bottom section -->
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h3 class="modal-title">Reserve Your Room</h3>
+            <p class="selected-room-name" id="selectedRoomName"></p>
+            
+            <!-- Scrollable Form Area -->
+            <div class="form-scroll-area">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkIn">Check-in Date *</label>
+                            <input type="date" id="checkIn" name="checkIn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkOut">Check-out Date *</label>
+                            <input type="date" id="checkOut" name="checkOut" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mealPlan">Meal Plan</label>
+                        <select id="mealPlan" name="mealPlan">
+                            <option value="none">Room Only (No Meals) - ₹ 0</option>
+                            <option value="breakfast">Breakfast Only - ₹ 500/person</option>
+                            <option value="halfBoard">Half Board (Breakfast + Dinner) - ₹ 1,000/person</option>
+                            <option value="fullBoard">Full Board (All Meals) - ₹ 1,500/person</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Counter inputs in a row with +/- buttons -->
+                    <div class="counter-row">
+                        <div class="counter-group">
+                            <label>Rooms *</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numRooms">−</button>
+                                <input type="number" id="numRooms" name="numRooms" min="1" value="1" required readonly>
+                                <button type="button" class="counter-btn plus" data-target="numRooms">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Adults *</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numAdults">−</button>
+                                <input type="number" id="numAdults" name="numAdults" min="1" value="1" required readonly>
+                                <button type="button" class="counter-btn plus" data-target="numAdults">+</button>
+                            </div>
+                        </div>
+                        <div class="counter-group">
+                            <label>Children</label>
+                            <div class="counter-input">
+                                <button type="button" class="counter-btn minus" data-target="numChildren">−</button>
+                                <input type="number" id="numChildren" name="numChildren" min="0" value="0" readonly>
+                                <button type="button" class="counter-btn plus" data-target="numChildren">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="limit-note" id="limitNote" aria-live="polite">Add more rooms to add more persons (adult or child)</div>
+                    <div class="form-group">
+                        <label for="specialRequest">Special Requests</label>
+                        <textarea id="specialRequest" name="specialRequest" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="businessBooking" name="businessBooking">
+                        <label for="businessBooking">This is a business booking</label>
+                    </div>
+                    
+                    <div class="business-fields" id="businessFields">
+                        <div class="form-group">
+                            <label for="gstin">GSTIN *</label>
+                            <input type="text" id="gstin" name="gstin">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName">
+                        </div>
+                        <div class="form-group">
+                            <label for="companyAddress">Company Address *</label>
+                            <textarea id="companyAddress" name="companyAddress" rows="2"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Fixed bottom section with price breakup and submit button -->
+            <div class="fixed-bottom-section">
+                <!-- Collapsible wrapper: header + all price rows + Amount Payable -->
+                <div class="price-breakup-wrapper">
+                    <!-- Price Breakup header (clickable to toggle entire section) -->
+                    <div class="price-breakup-header" id="priceBreakupHeader" role="button" tabindex="0" aria-expanded="false">
+                        <h4><span id="priceBreakupLabel">Open Price Breakup</span></h4>
+                    </div>
+
+                    <!-- Collapsible section (price rows) -->
+                    <div class="price-breakup" id="priceBreakupCollapsible">
+                        <div class="breakup-row">
+                            <span id="roomLabel"><span id="roomCount">2</span> Room(s)</span>
+                            <span id="roomCostBreakup">+ ₹ 0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="extraAdultLabel"><span id="extraAdultCount">1</span> Extra Adult(s)</span>
+                            <span id="adultCostBreakup">+ ₹ 0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="extraChildLabel"><span id="extraChildCount">1</span> Extra Child(s)</span>
+                            <span id="childCostBreakup">+ ₹ 0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="mealLabel"><span id="mealPlanName">Half Board</span> Meal Plan</span>
+                            <span id="mealCostBreakup">+ ₹ 0</span>
+                        </div>
+                        <div class="breakup-row total">
+                            <span>Sum Total <span class="per-night-note">(per night)</span></span>
+                            <span class="total-price" id="totalPrice">₹ 0</span>
+                        </div>
+                        <div class="breakup-row">
+                            <span id="nightLabel"><span id="nightCount">1</span> Night(s)</span>
+                            <span id="nightCost"><span class="multiplier-note">× <span id="nightsValue">1</span></span></span>
+                        </div>
+                    </div>
+
+                    <!-- Amount Payable placed OUTSIDE the collapsible section so it remains visible -->
+                    <div class="breakup-row total grand-outside" id="grandTotalRow">
+                        <span>Amount Payable</span>
+                        <span class="total-price" id="grandTotal">₹ 0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+        <button class="fullscreen-close" id="fullscreenClose">&times;</button>
+        <div class="zoom-controls">
+            <button class="zoom-btn" id="zoomIn">+</button>
+            <button class="zoom-btn" id="zoomOut">−</button>
+            <button class="zoom-btn" id="zoomReset">Reset</button>
+        </div>
+        <div class="fullscreen-image-container" id="fullscreenContainer">
+            <img src="/placeholder.svg" alt="Room Image" id="fullscreenImage">
+        </div>
+    </div>
+
+    <!-- ==================== SECTION 5: CONTACT ==================== -->
+    <section class="section-contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-grid">
+                <!-- Left Grid - Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h2>Get in Touch</h2>
+                        <p>We'd love to hear from you. Reach out to us using any of the contact methods below.</p>
+                    </div>
+
+                    <div class="contact-items" id="contactItems">
+                        <!-- Contact items will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right Grid - Google Map -->
+                <div class="map-container">
+                    <iframe id="mapIframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
