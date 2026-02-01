@@ -1,9 +1,3 @@
-Types of flights : We have 3 types of flights. first one is Direct flight, in which the aircraft takes off from origin and lands on the destination airport without any stoppage. 
-Second is Connecting flight where the passenger changes either aircraft or terminal or the airport after taking off from origin airport and before reaching to the destination airport.
-
-Third is VIA flight. It is also called Transit flight. Where Passenger boards to the flight at origin or source airport and deboards or deplanes at the destination airport. But the aircraft has one or more stoppage between origin and destination. The reason of stoppage could be fuel refillment or passenger deboarding and onboarding.
-
-
 Passenger, Guest, and Traveller are different terms used for customer.
 
 
@@ -61,7 +55,7 @@ Typical items: Laptop, phone, chargers, Documents, wallet, passport, Medicines, 
 
 It has a limit of 7Kg  and 2 pieces Per Passenger.
 
-Passenger can add extra carry-on baggage in 2 slabs (+3Kg and +5Kg). One slab can not be purchased twice. This helps if the passenger do not want to wait for the luggage belt to bring their check-in baggage. Also, it is subject to availablity, can be booked till 2 hours prior t STD, non refundable and non transferable (except if whole booking got cancelled by airline	).
+Passenger can add extra carry-on baggage in 2 slabs (+3Kg and +5Kg). The price is variable as per the journey and calculated by the pricing system. One slab can not be purchased twice. This helps if the passenger do not want to wait for the luggage belt to bring their check-in baggage. Also, it is subject to availablity, can be booked till 2 hours prior t STD, non refundable and non transferable (except if whole booking got cancelled by airline	).
 
 Excess baggage can be booked till 2hrs prior to STD (Scheduled Time of Departure). Maximum Cabin baggage allowed is 12Kg. More than that, passenger can keep their luggage in Check-in Baggage.
 
